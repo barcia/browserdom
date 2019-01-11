@@ -1,12 +1,12 @@
 {
-  "name": "browserdata",
+  "name": "browser-snoop",
   "version": "1.0.0-beta.1",
   "description": "Browser data sniffer",
-  "repository": "https://github.com/barcia/browserdata",
-  "bugs": "https://github.com/barcia/browserdata/issues",
+  "repository": "https://github.com/barcia/browser-snoop",
+  "bugs": "https://github.com/barcia/browser-snoop/issues",
   "author": "Iván Barcia <ivan@barcia.gal> (https://barcia.gal)",
   "license": "MIT",
-  "browser": "./dist/browserdata.js",
+  "browser": "./dist/main.js",
   "files": [
     "dist"
   ],
@@ -28,6 +28,8 @@
     "explorer",
     "data",
     "info",
-    "sniffer"
+    "sniffer",
+    "details",
+    "snoop"
   ]
 }
