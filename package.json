@@ -1,0 +1,33 @@
+{
+  "name": "browserdata",
+  "version": "1.0.0-beta.1",
+  "description": "Browser data sniffer",
+  "repository": "https://github.com/barcia/browserdata",
+  "bugs": "https://github.com/barcia/browserdata/issues",
+  "author": "Iván Barcia <ivan@barcia.gal> (https://barcia.gal)",
+  "license": "MIT",
+  "browser": "./dist/browserdata.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack --mode development --watch"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "babel-loader": "^8.0.5",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1"
+  },
+  "keywords": [
+    "js",
+    "javascript",
+    "browser",
+    "explorer",
+    "data",
+    "info",
+    "sniffer"
+  ]
+}
