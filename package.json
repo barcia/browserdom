@@ -1,14 +1,14 @@
 {
-  "name": "browser-snoop",
-  "version": "1.0.0-beta.1",
-  "description": "Browser data sniffer",
-  "repository": "https://github.com/barcia/browser-snoop",
-  "bugs": "https://github.com/barcia/browser-snoop/issues",
+  "name": "browserdom",
+  "version": "1.0.0",
+  "description": "Get browser data and insert it in the DOM",
+  "repository": "https://github.com/barcia/browserdom",
+  "bugs": "https://github.com/barcia/browserdom/issues",
   "author": "Iván Barcia <ivan@barcia.gal> (https://barcia.gal)",
   "license": "MIT",
-  "browser": "./dist/main.js",
+  "browser": "./lib/browserdom.min.js",
   "files": [
-    "dist"
+    "lib"
   ],
   "scripts": {
     "build": "webpack --mode production",
@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
+    "@babel/plugin-transform-object-assign": "^7.2.0",
     "@babel/preset-env": "^7.2.3",
     "babel-loader": "^8.0.5",
     "webpack": "^4.28.4",
@@ -25,11 +26,12 @@
     "js",
     "javascript",
     "browser",
+    "browserdom",
     "explorer",
     "data",
     "info",
     "sniffer",
     "details",
-    "snoop"
+    "dom"
   ]
 }

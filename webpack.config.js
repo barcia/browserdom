@@ -1,8 +1,18 @@
 module.exports = {
-    entry: './src/browsersnoop.js',
+    output: {
+      path: __dirname + '/lib',
+      filename: 'browserdom.min.js',
+      library: 'BrowserDOM',
+      libraryTarget: 'umd',
+      umdNamedDefine: true
+    },
     module: {
         rules: [
-          { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" }
+          {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            loader: "babel-loader"
+          }
         ]
       }
   };
