@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>BrowserDOM</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="./browserdom.min.js"></script>
+	<style>
+		body {
+			height: 300vh;
+		}
+	</style>
+	<script>
+
+	console.log(BrowserDOM.get());
+
+	BrowserDOM.print({
+		// type: 'class',
+		os: false,
+		name: false,
+		version: false,
+		online: false,
+		lang: false,
+		touchDevice: false,
+		scrolled: true,
+		scrolledTrigger: 1000,
+		scrollDir: true
+	});
+
+	</script>
+</head>
+<body>
+	<h1>Hello</h1>
+</body>
+</html>

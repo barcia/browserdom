@@ -1,6 +1,6 @@
-export function scrolled() {
+export function scrolled(trigger) {
     // Set if the window is scrolled
-    return window.scrollY > 1 ? true : false;
+    return window.scrollY > trigger ? true : false;
 }
 
 

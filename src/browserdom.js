@@ -1,22 +1,25 @@
 import {scrolled, scrollDir} from './_scroll';
 import getOS from './_os';
 import getNavigator from './_navigator';
+import touchDevice from './_touchDevice';
 
 
 
 // Browser object
-const browser = {
+const data = {
 	os: getOS().name,
 	name: getNavigator().name,
 	version: getNavigator().version,
 	online: navigator.onLine,
-	lang: navigator.language
+	lang: navigator.language,
+	touchDevice: touchDevice()
 };
 
+const html = document.documentElement;
 
 
-export function get() {
-	return browser
+export function get(prop) {
+	return prop ? data[prop] : data;
 }
 
 
@@ -31,35 +34,51 @@ export function print(customConfig) {
 		version: true,
 		online: false,
 		lang: false,
+		touchDevice: true,
 		scrolled: false,
+		scrolledTrigger: 1,
 		scrollDir: false
 	};
-	// const config = mergeConfig(defaultConfig, customConfig);
+
 	const config = Object.assign(defaultConfig, customConfig);
 
 
 	document.addEventListener('DOMContentLoaded', function() {
 		if (config.type == 'data-attr') {
-			if (config.os && browser.os!=undefined) document.documentElement.dataset.os = browser.os;
-			if (config.name && browser.name!=undefined) document.documentElement.dataset.browser = browser.name;
-			if (config.version && browser.version!=undefined) document.documentElement.dataset.browserversion = browser.version;
-			if (config.online && browser.online!=undefined) document.documentElement.dataset.online = browser.online;
-			if (config.lang && browser.lang!=undefined) document.documentElement.dataset.browserlang = browser.lang;
-			if (config.scrolled && scrolled()!=undefined) document.documentElement.dataset.scrolled = scrolled();
+
+			// Data
+			if (config.os && data.os!=undefined) html.dataset.os = data.os;
+			if (config.name && data.name!=undefined) html.dataset.browser = data.name;
+			if (config.version && data.version!=undefined) html.dataset.browserversion = data.version;
+			if (config.online && data.online!=undefined) html.dataset.online = data.online;
+			if (config.lang && data.lang!=undefined) html.dataset.browserlang = data.lang;
+			if (config.touchDevice && data.touchDevice!=undefined) html.dataset.touchdevice = data.touchDevice;
+
+			// Scroll
+			if (config.scrolled && scrolled(config.scrolledTrigger)!=undefined) html.dataset.scrolled = scrolled(config.scrolledTrigger);
 		}
 
+
+
 		if(config.type == 'class') {
-			if (config.os && browser.os!=undefined) document.documentElement.classList.add(config.classPrefix+'os'+'-'+browser.os);
-			if (config.name && browser.name!=undefined) document.documentElement.classList.add(config.classPrefix+'name'+'-'+browser.name);
-			if (config.version && browser.version!=undefined) document.documentElement.classList.add(config.classPrefix+'version'+'-'+browser.version);
-			if (config.online && browser.online!=undefined) document.documentElement.classList.add(config.classPrefix+'online'+'-'+browser.online);
-			if (config.lang && browser.lang!=undefined) document.documentElement.classList.add(config.classPrefix+'lang'+'-'+browser.lang);
-			if (scrolled()) {
-				document.documentElement.classList.add(config.classPrefix+'scrolled-true');
-				document.documentElement.classList.remove(config.classPrefix+'scrolled-false');
-			} else {
-				document.documentElement.classList.add(config.classPrefix+'scrolled-false');
-				document.documentElement.classList.remove(config.classPrefix+'scrolled-true');
+
+			// Data
+			if (config.os && data.os!=undefined) html.classList.add(config.classPrefix+'os'+'-'+data.os);
+			if (config.name && data.name!=undefined) html.classList.add(config.classPrefix+'name'+'-'+data.name);
+			if (config.version && data.version!=undefined) html.classList.add(config.classPrefix+'version'+'-'+data.version);
+			if (config.online && data.online!=undefined) html.classList.add(config.classPrefix+'online'+'-'+data.online);
+			if (config.lang && data.lang!=undefined) html.classList.add(config.classPrefix+'lang'+'-'+data.lang);
+			if (config.touchDevice && data.touchDevice!=undefined) html.classList.add(config.classPrefix+'touchDevice'+'-'+data.touchDevice);
+
+			// Scroll
+			if (config.scrolled && scrolled()!=undefined) {
+				if (scrolled()) {
+					html.classList.add(config.classPrefix+'scrolled-true');
+					html.classList.remove(config.classPrefix+'scrolled-false');
+				} else {
+					html.classList.add(config.classPrefix+'scrolled-false');
+					html.classList.remove(config.classPrefix+'scrolled-true');
+				}
 			}
 		}
 	});
@@ -67,28 +86,28 @@ export function print(customConfig) {
 
 	window.addEventListener('scroll', function() {
 		if (config.type == 'data-attr') {
-			if (config.scrolled && scrolled()!=undefined) document.documentElement.dataset.scrolled = scrolled();
-			if (config.scrollDir && scrollDir()!=undefined) document.documentElement.dataset.scrolldir = scrollDir();
+			if (config.scrolled && scrolled(config.scrolledTrigger)!=undefined) html.dataset.scrolled = scrolled(config.scrolledTrigger);
+			if (config.scrollDir && scrollDir()!=undefined) html.dataset.scrolldir = scrollDir();
 		}
 
 		if(config.type == 'class') {
-			if (config.scrolled && scrolled()!=undefined) {
-				if (scrolled()) {
-					document.documentElement.classList.add(config.classPrefix+'scrolled-true');
-					document.documentElement.classList.remove(config.classPrefix+'scrolled-false');
+			if (config.scrolled && scrolled(config.scrolledTrigger)!=undefined) {
+				if (scrolled(config.scrolledTrigger)) {
+					html.classList.add(config.classPrefix+'scrolled-true');
+					html.classList.remove(config.classPrefix+'scrolled-false');
 				} else {
-					document.documentElement.classList.add(config.classPrefix+'scrolled-false');
-					document.documentElement.classList.remove(config.classPrefix+'scrolled-true');
+					html.classList.add(config.classPrefix+'scrolled-false');
+					html.classList.remove(config.classPrefix+'scrolled-true');
 				}
 			};
 
 			if (config.scrollDir && scrollDir()!=undefined) {
 				if (scrollDir() == 'up') {
-					document.documentElement.classList.add(config.classPrefix+'scrolldir-up');
-					document.documentElement.classList.remove(config.classPrefix+'scrolldir-down');
+					html.classList.add(config.classPrefix+'scrolldir-up');
+					html.classList.remove(config.classPrefix+'scrolldir-down');
 				} else {
-					document.documentElement.classList.add(config.classPrefix+'scrolldir-down');
-					document.documentElement.classList.remove(config.classPrefix+'scrolldir-up');
+					html.classList.add(config.classPrefix+'scrolldir-down');
+					html.classList.remove(config.classPrefix+'scrolldir-up');
 				}
 			}
 		}
