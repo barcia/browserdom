@@ -1,6 +1,6 @@
 {
   "name": "browserdom",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Get browser data and insert it in the DOM",
   "repository": "https://github.com/barcia/browserdom",
   "bugs": "https://github.com/barcia/browserdom/issues",
@@ -11,16 +11,17 @@
     "lib"
   ],
   "scripts": {
-    "build": "webpack --mode production",
-    "start": "webpack --mode development --watch"
+    "build": "rollup -c",
+    "start": "rollup -c -w",
+    "prepare": "npm run build"
   },
   "devDependencies": {
-    "@babel/core": "^7.2.2",
+    "@babel/core": "^7.3.3",
     "@babel/plugin-transform-object-assign": "^7.2.0",
-    "@babel/preset-env": "^7.2.3",
-    "babel-loader": "^8.0.5",
-    "webpack": "^4.28.4",
-    "webpack-cli": "^3.2.1"
+    "@babel/preset-env": "^7.3.1",
+    "rollup": "^1.2.2",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-terser": "^4.0.4"
   },
   "keywords": [
     "js",

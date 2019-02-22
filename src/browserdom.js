@@ -94,13 +94,3 @@ export function print(customConfig) {
 		}
 	});
 }
-
-
-
-// Merge configurations
-function mergeConfig(config1, config2){
-	let configMerged = {};
-	for (let attrname in config1) { configMerged[attrname] = config1[attrname]; }
-	for (let attrname in config2) { configMerged[attrname] = config2[attrname]; }
-	return configMerged;
-}
