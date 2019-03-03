@@ -1,7 +1,7 @@
 {
   "name": "browserdom",
   "license": "MIT",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Get browser environment info and print it in the DOM.",
   "repository": "https://github.com/barcia/browserdom",
   "bugs": "https://github.com/barcia/browserdom/issues",
@@ -9,7 +9,7 @@
   "browser": "./dist/browserdom.min.js",
   "files": [
     "dist"
-	],
+  ],
   "scripts": {
     "build": "rollup -c",
     "start": "rollup -c -w",

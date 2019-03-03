@@ -29,12 +29,12 @@ import BrowserDOM from 'browserdom'
 
 ### Create a new instance
 ```js
-const BrowserDOM = new BrowserDOM();
+const myBrowserDOM = new BrowserDOM();
 ```
 
 You can pass your required [options](#options):
 ```js
-const BrowserDOM = new BrowserDOM({
+const myBrowserDOM = new BrowserDOM({
 		browser: false,
 		scrollPercentage: true
 });
@@ -44,13 +44,13 @@ const BrowserDOM = new BrowserDOM({
 
 ```js
 document.addEventListener("DOMContentLoaded", function() {
-  BrowserDOM.print();
+  myBrowserDOM.print();
 })
 ```
 
 ```js
 window.addEventListener("scroll", function() {
-  console.log(BrowserDOM.get("scrollPercentage"));
+  console.log(myBrowserDOM.get("scrollPercentage"));
 })
 ```
 
@@ -63,10 +63,10 @@ With ***print()*** method you write all your enabled [options](#options) as a **
 #### **Example**:
 * index.js
 ```js
-const BrowserDOM = new BrowserDOM();
+const myBrowserDOM = new BrowserDOM();
 
 document.addEventListener("DOMContentLoaded", function() {
-  BrowserDOM.print();
+  myBrowserDOM.print();
 })
 ```
 * Output HTML
@@ -86,10 +86,10 @@ With ***get()*** method you can get all the BrowserDOM object or pass one [optio
 #### Example 1:
 * index.js
 ```js
-const BrowserDOM = new BrowserDOM();
+const myBrowserDOM = new BrowserDOM();
 
 document.addEventListener("DOMContentLoaded", function() {
-  console.log(BrowserDOM.get());
+  console.log(myBrowserDOM.get());
 })
 ```
 * Output HTML
@@ -103,10 +103,10 @@ document.addEventListener("DOMContentLoaded", function() {
 #### Example 2:
 * index.js
 ```js
-const BrowserDOM = new BrowserDOM();
+const myBrowserDOM = new BrowserDOM();
 
 document.addEventListener("DOMContentLoaded", function() {
-  console.log(BrowserDOM.get("browser"));
+  console.log(myBrowserDOM.get("browser"));
 })
 ```
 * Output HTML
