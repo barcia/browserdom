@@ -1,25 +1,25 @@
 {
   "name": "browserdom",
-  "version": "1.1.0",
-  "description": "Get browser data and insert it in the DOM",
+  "license": "MIT",
+  "version": "2.0.0",
+  "description": "Get browser environment info and print it in the DOM.",
   "repository": "https://github.com/barcia/browserdom",
   "bugs": "https://github.com/barcia/browserdom/issues",
-  "author": "Iván Barcia <ivan@barcia.gal> (https://barcia.gal)",
-  "license": "MIT",
-  "browser": "./lib/browserdom.min.js",
+  "author": "Iván Barcia <ivan@barcia.dev> (https://barcia.dev)",
+  "browser": "./dist/browserdom.min.js",
   "files": [
-    "lib"
-  ],
+    "dist"
+	],
   "scripts": {
     "build": "rollup -c",
     "start": "rollup -c -w",
     "prepare": "npm run build"
   },
   "devDependencies": {
-    "@babel/core": "^7.3.3",
+    "@babel/core": "^7.3.4",
     "@babel/plugin-transform-object-assign": "^7.2.0",
-    "@babel/preset-env": "^7.3.1",
-    "rollup": "^1.2.2",
+    "@babel/preset-env": "^7.3.4",
+    "rollup": "^1.4.0",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-terser": "^4.0.4"
   },
