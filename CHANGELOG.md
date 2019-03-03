@@ -1,6 +1,6 @@
 # Changelog
 
-## [2.0.0](https://github.com/barcia/REPO/compare/v1.0.0...v2.0.0) - 2019-03-03
+## [2.0.0](https://github.com/barcia/browserdom/compare/v1.0.0...v2.0.0) - 2019-03-03
 ### Added
 - Touchscreen options
 - Limit option in scrolled
