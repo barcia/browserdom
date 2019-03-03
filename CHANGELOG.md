@@ -1,15 +1,17 @@
-## 1.0.0
-### Changed
-- Change name
-- Optimize exports
+# Changelog
 
-## 1.0.0-beta.2
+## [2.0.0](https://github.com/barcia/REPO/compare/v1.0.0...v2.0.0) - 2019-03-03
 ### Added
-- Scroll data
+- Touchscreen options
+- Limit option in scrolled
+- Added scroll options to get()
+- License
 ### Changed
-- Split source code in some files
-- Remove export default option
+- Changed [WebPack](https://webpack.js.org) bundler to [Rollup](https://rollupjs.org/)
+- Optimize package.json
+- Change export name on gnulinux to linux
+- Update README.md
+### Removed
+- Print method with classes
 
-
-## 1.0.0-beta.1 - 2019-01-11
-- First beta
+## 1.0.0 - 2019-01-15

@@ -1,84 +1,150 @@
 # BrowserDOM
-Return browser info and add it to the DOM.
+Get browser environment info and print it in the DOM.
+
+![Version](https://img.shields.io/github/package-json/v/barcia/browserdom.svg)
+![License](https://img.shields.io/github/license/barcia/browserdom.svg)
 
 
-## Installation
 
-### Script
-BrowserDOM can be used directly in the browser without the use of package managers/bundlers
-
+## Getting Started
+### Intallation
+* [Download](https://github.com/barcia/browserdom/releases/latest) the script and add it to the *head*
+```html
 <script src="./browserdom.min.js"></script>
-
-
-### Modules
-
-With npm do:
-
-```shell
-npm install browserdom
 ```
 
-
-Import the module in your index.js
-
-ES Modules:
-
-```js
-import * as BrowserDOM from 'browserdom'
+* Get it from a CDN
+```html
+<script src="https://unpkg.com/browserdom@2.0.0"></script>
 ```
 
-CommonJS:
+* Install it with NPM and import in your JS file
+```sh
+npm install --save-dev browserdom
+````
 
 ```js
-var merge = require('browserdom')
+import BrowserDOM from 'browserdom'
 ```
 
-
-## API
-
-### `BrowserDOM.get().[KEY]`
-`Browser.get()` returns a object with a set of BrowserDOM parameters:
-
-- `os`: System Operating name
-- `name`: Browser name
-- `version`: Browser version
-- `online`: True or false if navigator is online or not
-- `lang`: The navigator language
-
-Example:
+### Create a new instance
 ```js
-console.log( BrowserDOM.get().name );
-// firefox
+const BrowserDOM = new BrowserDOM();
 ```
 
-### `BrowserDOM.print([Options])`
-
-Print in the `<html>` tag some data-attributes with BrowserDOM info.
-
-Example:
+You can pass your required [options](#options):
 ```js
-BrowserDOM.print()
+const BrowserDOM = new BrowserDOM({
+		browser: false,
+		scrollPercentage: true
+});
 ```
 
-Other example enabling more info:
+### Print the data in the `<html>` tag, or get the info to use it in your JS
+
 ```js
-BrowserDOM.print({
-    os: true,
-    scrolled: true
+document.addEventListener("DOMContentLoaded", function() {
+  BrowserDOM.print();
 })
 ```
 
-#### Options
-Default options:
-
-```json
-type: 'data-attr',
-classPrefix: 'browser-',
-os: false,
-name: true,
-version: true,
-online: false,
-lang: false,
-scrolled: false,
-scrollDir: false
+```js
+window.addEventListener("scroll", function() {
+  console.log(BrowserDOM.get("scrollPercentage"));
+})
 ```
+
+
+## Methods
+
+### ***print***
+With ***print()*** method you write all your enabled [options](#options) as a **data-attribute** in the `<html>` tag.
+
+#### **Example**:
+* index.js
+```js
+const BrowserDOM = new BrowserDOM();
+
+document.addEventListener("DOMContentLoaded", function() {
+  BrowserDOM.print();
+})
+```
+* Output HTML
+```html
+<html data-browser="chrome" data-touchdevice="false">
+  <head></head>
+  <body></body>
+</html>
+```
+
+> By default, only `browser` and `touchDevice` options are enabled.
+
+
+### ***get***
+With ***get()*** method you can get all the BrowserDOM object or pass one [option](#options) as argument to retrieve it.
+
+#### Example 1:
+* index.js
+```js
+const BrowserDOM = new BrowserDOM();
+
+document.addEventListener("DOMContentLoaded", function() {
+  console.log(BrowserDOM.get());
+})
+```
+* Output HTML
+```js
+{
+  browser: chrome,
+  touchDevice, false
+}
+```
+
+#### Example 2:
+* index.js
+```js
+const BrowserDOM = new BrowserDOM();
+
+document.addEventListener("DOMContentLoaded", function() {
+  console.log(BrowserDOM.get("browser"));
+})
+```
+* Output HTML
+```js
+chrome
+```
+
+
+
+## Options
+These are all options with their default values
+* `os`: {boolean} The operating system [*false*]
+* `browser`: {boolean} The browser name [*true*]
+* `version`: {boolean} The browser version [*false*]
+* `online`: {boolean} If the browser is online [*false*]
+* `lang`: {boolean} The browser language [*false*]
+* `touchDevice`: {boolean} If is a touch device [*true*]
+* `scrolled`: {boolean} If is scrolled below from the `scrolledTrigger` number [*false*]
+* `scrolledTrigger`: {number} The scroll position where `scrolled` change to `true` [*1*]
+* `scrollDirection`: {boolean} If last scroll is to down or to up [*false*]
+* `scrollPosition`: {boolean} The scroll position [*false*]
+* `scrollPercentage`: {boolean} The page scroll percentage [*false*]
+
+
+
+## Changelog
+See [CHANGELOG.md](https://github.com/barcia/browserdom/blob/master/CHANGELOG.md)
+
+
+## Credits
+Developed by Iván Barcia
+* [barcia.dev](https://barcia.dev)
+* [Twitter](http://www.twitter.com/bartzia)
+* [GitHub](http://www.github.com/barcia)
+
+Project tested on [BrowserStack](https://www.browserstack.com/)
+
+
+
+## License
+This project is under [MIT License](https://github.com/barcia/bramework/blob/master/LICENSE)
