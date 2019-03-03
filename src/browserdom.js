@@ -1,4 +1,4 @@
-import {scrolled, scrollDir, scrollPos, scrollPer} from './_scroll';
+import {scrolled, scrollDirection, scrollPosition, scrollPercentage} from './_scroll';
 import getOS from './_os';
 import getNavigator from './_navigator';
 import touchDevice from './_touchDevice';
@@ -11,15 +11,15 @@ export default function(customConfig) {
 	let defaultConfig = {
 		os: false,
 		browser: true,
-		version: true,
+		version: false,
 		online: false,
 		lang: false,
 		touchDevice: true,
-		scrolled: true,
+		scrolled: false,
 		scrolledTrigger: 1,
-		scrollDir: false,
-		scrollPos: false,
-		scrollPer: true
+		scrollDirection: false,
+		scrollPosition: false,
+		scrollPercentage: false
 	};
 
 	const config = buildConfig(customConfig);
@@ -44,18 +44,16 @@ export default function(customConfig) {
 
 
 	// Get scroll info
-	function scrollData() {
-		if (config.scrolled) {data.scrolled = scrolled(config.scrolledTrigger);}
-		if (config.scrollDir) {data.scrollDir = scrollDir();}
-		if (config.scrollPos) {data.scrollPos = scrollPos();}
-		if (config.scrollPer) {data.scrollPer = scrollPer(scrollPos());}
-	}
-
 	window.addEventListener('load', scrollData, false);
 	window.addEventListener('scroll', scrollData, false);
 	window.addEventListener('resize', scrollData, false);
 
-
+	function scrollData() {
+		if (config.scrolled) {data.scrolled = scrolled(config.scrolledTrigger);}
+		if (config.scrollDirection) {data.scrollDirection = scrollDirection();}
+		if (config.scrollPosition) {data.scrollPosition = scrollPosition();}
+		if (config.scrollPercentage) {data.scrollPercentage = scrollPercentage(scrollPosition());}
+	}
 
 
 
@@ -80,9 +78,9 @@ export default function(customConfig) {
 
 		function updateScroll() {
 			if (data.scrolled!=undefined) html.dataset.scrolled = data.scrolled;
-			if (data.scrollDir!=undefined) html.dataset.scrollDir = data.scrollDir;
-			if (data.scrollPos!=undefined) html.dataset.scrollPos = data.scrollPos;
-			if (data.scrollPer!=undefined) html.dataset.scrollPer = data.scrollPer;
+			if (data.scrollDirection!=undefined) html.dataset.scrolldirection = data.scrollDirection;
+			if (data.scrollPosition!=undefined) html.dataset.scrollposition = data.scrollPosition;
+			if (data.scrollPercentage!=undefined) html.dataset.scrollpercentage = data.scrollPercentage;
 		}
 	}
 }

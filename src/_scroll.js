@@ -8,7 +8,7 @@ let dir = undefined;
 let scrollCurrent;
 let scrollPrevious;
 
-export function scrollDir() {
+export function scrollDirection() {
     // Set if the window scroll up or down
     scrollCurrent > scrollPrevious ? dir = 'down' : dir = 'up';
 
@@ -20,7 +20,7 @@ export function scrollDir() {
 }
 
 
-export function scrollPos() {
+export function scrollPosition() {
 	const scrollArea = pageHeight() - document.documentElement.clientHeight;
 
 	if (scrollArea > 1) {
@@ -31,7 +31,7 @@ export function scrollPos() {
 }
 
 
-export function scrollPer(currentScrollPosition) {
+export function scrollPercentage(currentScrollPosition) {
 	const scrollArea = pageHeight() - document.documentElement.clientHeight;
 
 	if (scrollArea > 1) {
