@@ -1,7 +1,7 @@
 {
   "name": "browserdom",
   "license": "MIT",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Get browser environment info and print it in the DOM.",
   "repository": "https://github.com/barcia/browserdom",
   "bugs": "https://github.com/barcia/browserdom/issues",

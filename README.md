@@ -126,7 +126,7 @@ These are all options with their default values
 * `touchDevice`: {boolean} If is a touch device [*true*]
 * `scrolled`: {boolean} If is scrolled below from the `scrolledTrigger` number [*false*]
 * `scrolledTrigger`: {number} The scroll position where `scrolled` change to `true` [*1*]
-* `scrollDirection`: {boolean} If last scroll is to down or to up [*false*]
+* `scrollDirection`: {string} If last scroll is to `down` or to `up` [*false*]. If is on top show `stop`.
 * `scrollPosition`: {boolean} The scroll position [*false*]
 * `scrollPercentage`: {boolean} The page scroll percentage [*false*]
 

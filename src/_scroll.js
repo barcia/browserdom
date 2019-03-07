@@ -16,7 +16,7 @@ export function scrollDirection() {
     scrollPrevious = scrollCurrent;
     scrollCurrent = window.scrollY;
 
-    return dir;
+		return window.scrollY > 1 ? dir : 'stop';
 }
 
 

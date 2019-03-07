@@ -1,6 +1,10 @@
 # Changelog
 
-## [2.0.1](https://github.com/barcia/browserdom/compare/v12.0.0...v2.0.1) - 2019-03-03
+## [2.0.2](https://github.com/barcia/browserdom/compare/v2.0.1...v2.0.2) - 2019-03-08
+### Changed
+- Now scrollDirection on top shows `stop`.
+
+## [2.0.1](https://github.com/barcia/browserdom/compare/v2.0.0...v2.0.1) - 2019-03-03
 ### Fixed
 - const name in documentation examples
 
