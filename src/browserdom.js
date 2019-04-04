@@ -63,7 +63,7 @@ export default function(customConfig) {
 	}
 
 
-// Print function
+	// Print function
 	this.print = function() {
 		if (data.os!=undefined) html.dataset.os = data.os;
 		if (data.browser!=undefined) html.dataset.browser = data.browser;
