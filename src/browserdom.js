@@ -10,11 +10,11 @@ export default function(customConfig) {
 	// Config
 	let defaultConfig = {
 		os: false,
-		browser: true,
+		browser: false,
 		version: false,
 		online: false,
 		lang: false,
-		touchDevice: true,
+		touchDevice: false,
 		scrolled: false,
 		scrolledTrigger: 1,
 		scrollDirection: false,
