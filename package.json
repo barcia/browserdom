@@ -1,7 +1,7 @@
 {
   "name": "browserdom",
   "license": "MIT",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "Get browser environment info and print it in the DOM.",
   "repository": "https://github.com/barcia/browserdom",
   "bugs": "https://github.com/barcia/browserdom/issues",
@@ -16,10 +16,10 @@
     "prepare": "npm run build"
   },
   "devDependencies": {
-    "@babel/core": "^7.3.4",
+    "@babel/core": "^7.4.3",
     "@babel/plugin-transform-object-assign": "^7.2.0",
-    "@babel/preset-env": "^7.3.4",
-    "rollup": "^1.4.0",
+    "@babel/preset-env": "^7.4.3",
+    "rollup": "^1.8.0",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-terser": "^4.0.4"
   },

@@ -10,11 +10,11 @@ export default function(customConfig) {
 	// Config
 	let defaultConfig = {
 		os: false,
-		browser: true,
+		browser: false,
 		version: false,
 		online: false,
 		lang: false,
-		touchDevice: true,
+		touchDevice: false,
 		scrolled: false,
 		scrolledTrigger: 1,
 		scrollDirection: false,
@@ -63,7 +63,7 @@ export default function(customConfig) {
 	}
 
 
-// Print function
+	// Print function
 	this.print = function() {
 		if (data.os!=undefined) html.dataset.os = data.os;
 		if (data.browser!=undefined) html.dataset.browser = data.browser;

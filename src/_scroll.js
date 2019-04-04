@@ -9,14 +9,14 @@ let scrollCurrent;
 let scrollPrevious;
 
 export function scrollDirection() {
-    // Set if the window scroll up or down
-    scrollCurrent > scrollPrevious ? dir = 'down' : dir = 'up';
+	// Set if the window scroll up or down
+	scrollCurrent > scrollPrevious ? dir = 'down' : dir = 'up';
 
-    // Update the scroll position
-    scrollPrevious = scrollCurrent;
-    scrollCurrent = window.scrollY;
+	// Update the scroll position
+	scrollPrevious = scrollCurrent;
+	scrollCurrent = window.scrollY;
 
-		return window.scrollY > 1 ? dir : 'stop';
+	return window.scrollY > 1 ? dir : 'top';
 }
 
 
