@@ -7,7 +7,7 @@ Get browser environment info and print it in the DOM.
 
 
 ## Getting Started
-### Intallation
+### Installation
 * [Download](https://github.com/barcia/browserdom/releases/latest) the script and add it to the *head*
 ```html
 <script src="./browserdom.min.js"></script>
@@ -15,7 +15,7 @@ Get browser environment info and print it in the DOM.
 
 * Get it from a CDN
 ```html
-<script src="https://unpkg.com/browserdom@2.0.0"></script>
+<script src="https://unpkg.com/browserdom"></script>
 ```
 
 * Install it with NPM and import in your JS file
@@ -23,19 +23,18 @@ Get browser environment info and print it in the DOM.
 npm install --save-dev browserdom
 ````
 
-```js
-import BrowserDOM from 'browserdom'
-```
+
 
 ### Create a new instance
+* Import it:
 ```js
-const myBrowserDOM = new BrowserDOM();
+import BrowserDOM from 'browserdom';
 ```
 
-You can pass your required [options](#options):
+* Create a new instance passing your required [options](#options):
 ```js
 const myBrowserDOM = new BrowserDOM({
-		browser: false,
+		browser: true,
 		scrollPercentage: true
 });
 ```
@@ -63,7 +62,10 @@ With ***print()*** method you write all your enabled [options](#options) as a **
 #### **Example**:
 * index.js
 ```js
-const myBrowserDOM = new BrowserDOM();
+const myBrowserDOM = new BrowserDOM({
+  browser: true,
+  touchDevice: true
+});
 
 document.addEventListener("DOMContentLoaded", function() {
   myBrowserDOM.print();
@@ -77,8 +79,6 @@ document.addEventListener("DOMContentLoaded", function() {
 </html>
 ```
 
-> By default, only `browser` and `touchDevice` options are enabled.
-
 
 ### ***get***
 With ***get()*** method you can get all the BrowserDOM object or pass one [option](#options) as argument to retrieve it.
@@ -86,30 +86,36 @@ With ***get()*** method you can get all the BrowserDOM object or pass one [optio
 #### Example 1:
 * index.js
 ```js
-const myBrowserDOM = new BrowserDOM();
+const myBrowserDOM = new BrowserDOM({
+  browser: true,
+  touchDevice: true
+});
 
 document.addEventListener("DOMContentLoaded", function() {
   console.log(myBrowserDOM.get());
 })
 ```
-* Output HTML
+* Output JSON
 ```js
 {
   browser: chrome,
-  touchDevice, false
+  touchDevice: false
 }
 ```
 
 #### Example 2:
 * index.js
 ```js
-const myBrowserDOM = new BrowserDOM();
+const myBrowserDOM = new BrowserDOM({
+  browser: true,
+  touchDevice: true
+});
 
 document.addEventListener("DOMContentLoaded", function() {
   console.log(myBrowserDOM.get("browser"));
 })
 ```
-* Output HTML
+* Output
 ```js
 chrome
 ```
@@ -129,6 +135,19 @@ These are all options with their default values
 * `scrollDirection`: {string} If last scroll is to `down` or to `up` [*false*]. If is on top show `stop`.
 * `scrollPosition`: {boolean} The scroll position [*false*]
 * `scrollPercentage`: {boolean} The page scroll percentage [*false*]
+
+## Returned values
+These are all returned values if the option is enables
+* os: `macos` | `linux` | `windows` | `ios` | `android`
+* browser: `chrome`| `safari` | `firefox` | `edge` | `ie`
+* version: `{number}`
+* online: `{boolean}`
+* lang: `{lang ISO code}`
+* touchDevice: `{boolean}`
+* scrolled: `{boolean}`
+* scrollDirection: `down`| `up`| `top`
+* scrollPosition: `{number}`
+* scrollPercentage: `{number}`
 
 
 
