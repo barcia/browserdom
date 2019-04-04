@@ -3,6 +3,7 @@ Get browser environment info and print it in the DOM.
 
 ![Version](https://img.shields.io/github/package-json/v/barcia/browserdom.svg)
 ![License](https://img.shields.io/github/license/barcia/browserdom.svg)
+![Size](https://img.shields.io/bundlephobia/minzip/browserdom.svg)
 
 
 
