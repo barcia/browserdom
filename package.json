@@ -13,7 +13,7 @@
   "scripts": {
     "build": "npm run build:js; npm run build:scss",
     "build:js": "rollup -c",
-    "build:scss": "cp ./src/mixins.scss ./dist",
+    "build:scss": "cp ./src/_mixins.scss ./dist/",
     "start": "rollup -c -w",
     "prepare": "npm run build"
   },
