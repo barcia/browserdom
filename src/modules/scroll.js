@@ -7,7 +7,11 @@ const getPageHeight = () => Math.max(
 let direction;
 let scrollCurrent;
 let scrollPrevious;
-const scrollArea = getPageHeight() - document.documentElement.clientHeight;
+let scrollArea;
+
+document.addEventListener('load', () => {
+	scrollArea = getPageHeight() - document.documentElement.clientHeight;
+});
 
 
 export function scrolled(trigger = 1) {
