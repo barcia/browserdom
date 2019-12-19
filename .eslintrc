@@ -1,0 +1,22 @@
+{
+	"env": {
+		"browser": true,
+		"es6": true
+	},
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+	},
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+	"extends": [
+		"eslint:recommended",
+		"airbnb-base"
+	],
+	"rules": {
+		"indent": [1, "tab"],
+		"no-tabs": 0
+	}
+}

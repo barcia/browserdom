@@ -11,7 +11,9 @@
     "dist"
   ],
   "scripts": {
-    "build": "rollup -c",
+    "build": "npm run build:js; npm run build:scss",
+    "build:js": "rollup -c",
+    "build:scss": "cp ./src/mixins.scss ./dist",
     "start": "rollup -c -w",
     "prepare": "npm run build"
   },
@@ -19,6 +21,9 @@
     "@babel/core": "^7.7.5",
     "@babel/plugin-transform-object-assign": "^7.7.4",
     "@babel/preset-env": "^7.7.6",
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.19.1",
     "rollup": "^1.27.13",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-terser": "^5.1.3"

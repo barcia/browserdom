@@ -1,0 +1,45 @@
+// Browser
+@mixin browser-name($name) {
+	[data-browsername=#{$name}] & {
+		@content;
+	}
+}
+@mixin browser-version($version) {
+	[data-browserversionshort=#{$version}] & {
+		@content;
+	}
+}
+@mixin browser-online($online) {
+	[data-browseronline=#{$online}] & {
+		@content;
+	}
+}
+@mixin browser-language($language) {
+	[data-browserlanguage=#{$language}] & {
+		@content;
+	}
+}
+
+
+
+// OS
+@mixin os-name($name) {
+	[data-osname=#{$name}] & {
+		@content;
+	}
+}
+
+
+
+// Scroll
+@mixin scrolled($scrolled: true) {
+	[data-scrolled=#{$scrolled}] & {
+		@content;
+	}
+}
+
+@mixin scroll($direction) {
+	[data-scrolldirection=#{$direction}] & {
+		@content;
+	}
+}

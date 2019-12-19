@@ -6,6 +6,7 @@ Get browser environment info and print it in the DOM.
 ![Size](https://img.shields.io/bundlephobia/minzip/browserdom.svg)
 
 
+opera - chrome
 
 ## Getting Started
 ### Installation
